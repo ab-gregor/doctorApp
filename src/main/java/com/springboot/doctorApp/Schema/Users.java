@@ -31,8 +31,8 @@ public class Users {
     @OneToOne(fetch = FetchType.LAZY,mappedBy = "patient")  //address id one to many
     private Patient_details patient_details;
 //
-//    @OneToOne(fetch = FetchType.LAZY,mappedBy = "doctor")  //address id one to many
-//    private Doctor_details doctor_details;
+    @OneToOne(fetch = FetchType.LAZY,mappedBy = "doctor")  //address id one to many
+    private Doctor_details doctor_details;
 
     //@ManyToOne(fetch = FetchType.LAZY)
     //@JoinColumn(name="user_type_Id")
