@@ -15,7 +15,7 @@ import java.util.List;
 public class Users {
     @Id
     @GeneratedValue
-    int user_Id;
+    int user_id;
     //int user_type_id ;
     String name;
     int age;

@@ -20,7 +20,7 @@ public class Patient_details {
     int weight;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="user_id",nullable = false)
+    @JoinColumn(name="user_id")
     private Users patient;
 
 //    @OneToMany(fetch = FetchType.LAZY,mappedBy = "patient_details")
