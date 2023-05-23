@@ -11,9 +11,9 @@ public class UsersServiceImp implements UsersService{
     @Autowired
     private UsersDao usersDao;
     @Override
-    public String addUser(Users user) {
+    public Users addUser(Users user) {
         usersDao.save(user);
-        return "User added successfully";
+        return user;
     }
 
 //    @Override

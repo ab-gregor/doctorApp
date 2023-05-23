@@ -5,7 +5,7 @@ import com.springboot.doctorApp.Schema.Users;
 import java.util.List;
 
 public interface UsersService {
-    public String addUser(Users user);
+    public Users addUser(Users user);
 
 //    public Users getUser();
 }
