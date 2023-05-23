@@ -15,9 +15,9 @@ public class Doctor_detailsServiceImpl implements Doctor_detailsService {
     private Doctor_detailsDao doctor_detailsDao;
 
     @Override
-    public String addDoctor(Doctor_details doctor_details) {
+    public Doctor_details addDoctor(Doctor_details doctor_details) {
         doctor_detailsDao.save(doctor_details);
-        return "patient added successfully";
+        return doctor_details;
     }
 
     public List<Doctor_details> findByspecialization(String specialization){

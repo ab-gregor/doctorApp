@@ -16,7 +16,7 @@ public class Doctor_detailsController {
     @Autowired
     private Doctor_detailsDao doctor_detailsDao;
     @PostMapping("/addDoctor")
-    public String addDoctor(@RequestBody Doctor_details doctor_details) {
+    public Doctor_details addDoctor(@RequestBody Doctor_details doctor_details) {
         return doctor_detailsServiceImpl.addDoctor(doctor_details);
     }
     @GetMapping(value = {"findDoctor/{specialization}"})

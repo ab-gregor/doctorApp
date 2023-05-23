@@ -7,7 +7,7 @@ import com.springboot.doctorApp.Schema.Patient_details;
 import java.util.Optional;
 
 public interface Doctor_detailsService {
-    public String addDoctor(Doctor_details doctor_details);
+    public Doctor_details addDoctor(Doctor_details doctor_details);
 
 
     //public Optional <Doctor_details> getDoctor(String spec);
