@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
+
 @Component
 public class UsersServiceImp implements UsersService{
     @Autowired
@@ -15,6 +17,13 @@ public class UsersServiceImp implements UsersService{
         usersDao.save(user);
         return user;
     }
+
+    @Override
+    public Optional<Users> getUser(int user_id) {
+        return usersDao.findById(user_id);
+
+    }
+
 
 //    @Override
 //    public Users getUser() {
