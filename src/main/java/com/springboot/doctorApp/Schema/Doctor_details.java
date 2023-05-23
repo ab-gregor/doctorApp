@@ -17,7 +17,7 @@ public class Doctor_details {
     @Id
     @GeneratedValue
     int doctor_details_id;
-    boolean is_verified;
+    int is_verified;
     String specialization;
     String hospital_name;
     String location;
