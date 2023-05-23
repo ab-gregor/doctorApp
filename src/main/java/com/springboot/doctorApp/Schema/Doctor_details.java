@@ -33,4 +33,6 @@ public class Doctor_details {
 
     @OneToMany(fetch=FetchType.LAZY)
     public List<Appointment> appointments;
+
+
 }

@@ -23,4 +23,14 @@ public class Doctor_detailsController {
     public List<Doctor_details> findByspecialization(@PathVariable String specialization){
         return doctor_detailsDao.findByspecialization(specialization);
     }
+
+    @GetMapping(value={"findUnVerified"})
+    public List<Doctor_details> findUnVerified(){
+        return doctor_detailsDao.findUnVerified();
+    }
+
+    @PutMapping(value={"verifyDoctor/{doctor_details_id}"})
+    public Doctor_details verifyDoctor(@PathVariable int doctor_details_id){
+        return doctor_detailsServiceImpl.verifyDoctor(doctor_details_id);
+    }
 }

@@ -8,6 +8,7 @@ import java.util.Optional;
 
 public interface Doctor_detailsService {
     public Doctor_details addDoctor(Doctor_details doctor_details);
+    public Doctor_details verifyDoctor(int doctor_id);
 
 
     //public Optional <Doctor_details> getDoctor(String spec);
