@@ -23,16 +23,15 @@ public class Users {
     String email;
     String password;
     String phone_num;
+    //@Transient
+    @ManyToOne
+    public User_types user_type;
 
-    //@ManyToOne(fetch = FetchType.LAZY)
-  //  @JoinColumn(name="userId",nullable = false)
-   // private User user;
-
-    @OneToOne(fetch = FetchType.LAZY,mappedBy = "patient")  //address id one to many
-    private Patient_details patient_details;
+//    @OneToOne(mappedBy = "patient")  //address id one to many
+//    private Patient_detsails patient_details;
 //
-    @OneToOne(fetch = FetchType.LAZY,mappedBy = "doctor")  //address id one to many
-    private Doctor_details doctor_details;
+//    @OneToOne(mappedBy = "doctor")  //address id one to many
+//    private Doctor_details doctor_details;
 
     //@ManyToOne(fetch = FetchType.LAZY)
     //@JoinColumn(name="user_type_Id")

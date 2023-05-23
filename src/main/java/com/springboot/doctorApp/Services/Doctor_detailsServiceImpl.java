@@ -19,4 +19,9 @@ public class Doctor_detailsServiceImpl implements Doctor_detailsService {
         doctor_detailsDao.save(doctor_details);
         return "patient added successfully";
     }
+
+    public List<Doctor_details> findByspecialization(String specialization){
+            return doctor_detailsDao.findByspecialization(specialization);
+        }
+
 }

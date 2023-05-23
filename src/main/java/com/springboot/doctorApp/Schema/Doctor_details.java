@@ -1,4 +1,5 @@
 package com.springboot.doctorApp.Schema;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,9 +24,9 @@ public class Doctor_details {
     String qualification;
     int experience;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="user_id",nullable = false)
-    private Users doctor;
+
+    @OneToOne
+    Users doctor;
 //
 //    @OneToMany(fetch = FetchType.LAZY,mappedBy = "doctor_details")
 //    private List<Appointment> appointment;
