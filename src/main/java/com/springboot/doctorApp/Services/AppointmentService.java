@@ -1,6 +1,8 @@
 package com.springboot.doctorApp.Services;
 
-public class AppointmentService {
+import com.springboot.doctorApp.Schema.Appointment;
 
+public interface AppointmentService {
 
+     Appointment addAppointment(Appointment appointment);
 }

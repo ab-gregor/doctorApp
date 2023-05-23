@@ -16,7 +16,7 @@ import java.util.List;
 public class Doctor_details {
     @Id
     @GeneratedValue
-    int doctor_details_Id;
+    int doctor_details_id;
     boolean is_verified;
     String specialization;
     String hospital_name;
@@ -30,4 +30,7 @@ public class Doctor_details {
 //
 //    @OneToMany(fetch = FetchType.LAZY,mappedBy = "doctor_details")
 //    private List<Appointment> appointment;
+
+    @OneToMany(fetch=FetchType.LAZY)
+    public List<Appointment> appointments;
 }

@@ -17,13 +17,10 @@ public class Appointment {
 
     long start_time;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name="patient_details_id")
-//    Patient_details patient_details;
-//
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name="doctor_details_id")
-//    Doctor_details doctor_details;
+    @ManyToOne
+    public Patient_details patient_details;
+    @ManyToOne
+    public Doctor_details doctor_details;
 
 
 

@@ -15,13 +15,15 @@ import java.util.List;
 public class Patient_details {
     @Id
     @GeneratedValue
-    int patient_details_Id;
+    int patient_details_id;
     String blood_group;
     int weight;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="user_id")
-    private Users patient;
+    @OneToOne
+    Users patient;
+
+    @OneToMany
+    public List<Appointment> appointments;
 
 //    @OneToMany(fetch = FetchType.LAZY,mappedBy = "patient_details")
 //    private List<Appointment> appointment;
