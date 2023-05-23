@@ -17,9 +17,17 @@ public class AppointmentServiceImpl implements AppointmentService
         appoitmentDao.save(appointment);
         return appointment;
     }
-    public List<Appointment> findAppointmentByPatientId(int patient_id){
-        return appoitmentDao.findAppointmentByPatientId(patient_id);
-    }
+//    public List<Appointment> findAppointmentByPatientId(int patient_id){
+//        return appoitmentDao.findAppointmentByPatientId(patient_id);
+//    }
+//    public List<Appointment> findAppointmentByDoctorId(int doctor_id){
+//        return appoitmentDao.findAppointmentByDoctorId(doctor_id);
+//    }
+
+//    public List<Appointment> findAppointmentUpcoming(int patient_id,long start_time){
+//        return appoitmentDao.findAppointmentUpcoming(patient_id);
+//    }
+
 
 
 

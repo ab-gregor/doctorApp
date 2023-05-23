@@ -12,4 +12,12 @@ public interface AppoitmentDao extends JpaRepository<Appointment,Integer> {
     @Query(nativeQuery= true, value="SELECT * FROM Appointment WHERE patient_details_patient_details_id =(?1)")
     List<Appointment> findAppointmentByPatientId(int patient_id);
 
+    @Query(nativeQuery= true, value="SELECT * FROM Appointment WHERE doctor_details_doctor_details_id =(?1)")
+    List<Appointment> findAppointmentByDoctorId(int doctor_id);
+
+    @Query(nativeQuery= true, value="SELECT * FROM Appointment WHERE patient_details_patient_details_id =(?1) AND " +
+            "start_time>=(?2)")
+    List<Appointment> findAppointmentUpcoming(int patient_id,long start_time);
+
+
 }
