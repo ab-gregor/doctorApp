@@ -12,8 +12,8 @@ public class Patient_detailsServiceImpl implements Patient_detailsService {
     private Patient_detailsDao patient_detailsDao;
 
     @Override
-    public String addPatient(Patient_details patient_details) {
+    public Patient_details addPatient(Patient_details patient_details) {
         patient_detailsDao.save(patient_details);
-        return "patient added successfully";
+        return patient_details;
     }
 }

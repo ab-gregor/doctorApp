@@ -6,7 +6,7 @@ import com.springboot.doctorApp.Schema.Users;
 import java.util.List;
 
 public interface Patient_detailsService {
-    public String addPatient(Patient_details patient_details);
+    public Patient_details addPatient(Patient_details patient_details);
 
 //    public Users getUser();
 }

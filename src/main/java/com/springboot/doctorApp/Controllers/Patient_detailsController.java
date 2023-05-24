@@ -15,7 +15,7 @@ public class Patient_detailsController {
     private Patient_detailsServiceImpl patient_detailsServiceImpl;
 
     @PostMapping("/addPatient")
-    public String addPatient(@RequestBody Patient_details patient_details) {
+    public Patient_details addPatient(@RequestBody Patient_details patient_details) {
         return patient_detailsServiceImpl.addPatient(patient_details);
     }
 }
