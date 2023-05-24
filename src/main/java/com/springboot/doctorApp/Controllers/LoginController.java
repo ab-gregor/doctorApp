@@ -1,5 +1,6 @@
 package com.springboot.doctorApp.Controllers;
 
+import com.springboot.doctorApp.Dao.Patient_detailsDao;
 import com.springboot.doctorApp.Dao.UserRepository;
 import com.springboot.doctorApp.Schema.Users;
 
@@ -18,6 +19,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -31,9 +34,12 @@ public class LoginController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private Patient_detailsDao patient_detailsDao;
+
 
     @PostMapping("/loginAuth")
-    public Users login(@RequestBody Map<String, String> loginData)throws UsernameNotFoundException {
+    public List<Integer> login(@RequestBody Map<String, String> loginData)throws UsernameNotFoundException {
         String email = loginData.get("email");
         String password = loginData.get("password");
         Users user = userRepository.findByEmail(email);
@@ -47,8 +53,13 @@ public class LoginController {
 //            System.out.println((user.getPassword()));
 
             if ((email.equals(user.getEmail())) && (  password.equals(user.getPassword()))) {
+                List<Integer> ids=new ArrayList<Integer>();
 
-                return user;
+                ids.add(user.getUser_id());
+                ids.add(user.user_type.getUser_type_id());
+                int pat_det_id= patient_detailsDao.returnPatientId(user.getUser_id());
+                ids.add(pat_det_id);
+                return ids;
             }
             else{
                 return null;
