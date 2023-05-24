@@ -2,6 +2,7 @@ package com.springboot.doctorApp.Dao;
 
 import com.springboot.doctorApp.Schema.Doctor_details;
 import com.springboot.doctorApp.Schema.Patient_details;
+import org.springframework.aop.AopInvocationException;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -16,6 +17,10 @@ public interface Doctor_detailsDao extends JpaRepository<Doctor_details,Integer>
 
     @Query(nativeQuery= true, value="SELECT * FROM Doctor_details WHERE doctor_details_id =(?1)")
     Doctor_details findDocbyId(int doctor_details_id);
+
+    @Query(nativeQuery= true, value="SELECT doctor_details_id FROM Doctor_details WHERE doctor_user_id =(?1)")
+    Integer returnDoctorId(int user_id) throws AopInvocationException;
+
 
 
 }
